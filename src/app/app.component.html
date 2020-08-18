@@ -1,0 +1,16 @@
+
+<div class="container row" >
+<br/>
+<div class="col-lg-2" ></div>
+<div class="row col-lg-9" style="width:80%">
+  <div class="col-lg-4" style="padding:20px 10px;"  *ngFor="let item of imageSrc; let i = index"  >
+    <img [src]="item.location"  (click)="deleteDisable(i) || clickUpload()" class="img"  />
+    <i *ngIf="deleteDisable(i)" (click)="clearImg(i)" style="right:10%;top: 100px;font-size:24px;
+    color:blue;" 
+    class="glyphicon glyphicon-trash"></i><input id="box{{i}}" type="file" accept="image/*"   
+    style="display: none;" (change)="onSelectFile($event)" ></div>    
+
+</div>
+<div class="col-lg-1" ></div>
+</div>
+
